@@ -8,13 +8,14 @@ kbd = Keyboard.new
 
 # `split=` should happen before `init_pins`
 kbd.split = true
-kbd.set_anchor(:right)
+
+# You can make right side the "anchor" (so-called "master")
+# kbd.set_anchor(:right)
 
 # Initialize GPIO assign
 kbd.init_pins(
-  [ 4, 5, 6, 7 ],   # row0, row1,... respectively
-  [ 16, 28, 27, 26, 22, 20 ]  # when Raspi Pico --- col0, col1,... respectively
-#  [ 29, 28, 27, 26, 22, 20 ]  # when DEV-17717 --- col0, col1,... respectively
+  [ 4, 5, 6, 7 ],            # row0, row1,... respectively
+  [ 29, 28, 27, 26, 22, 20 ] # col0, col1,... respectively
 )
 
 # default layer should be added at first
